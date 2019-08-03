@@ -52,9 +52,8 @@ contexts:
         3: keyword.other.elm
       push:
         - meta_scope: entity.glsl.elm
-        - match: '(\|\])'
-          captures:
-            1: keyword.other.elm
+        - match: '\|\]'
+          scope: keyword.other.elm
           pop: true
         - include: scope:source.glsl
     - match: type( alias)? (\w+)
@@ -74,7 +73,7 @@ contexts:
       captures:
         0: punctuation.definition.string.begin.elm
       push:
-        - meta_scope: string.quoted.double.elm
+        - meta_scope: string.quoted.triple.elm
         - match: '"""'
           captures:
             0: punctuation.definition.string.end.elm
@@ -90,42 +89,38 @@ contexts:
             0: punctuation.definition.string.end.elm
           pop: true
         - include: escapes
-    - match: ''''
+    - match: "'"
       captures:
         0: punctuation.definition.string.begin.elm
       push:
         - meta_scope: string.quoted.single.elm
-        - match: ''''
+        - match: "'"
           captures:
             0: punctuation.definition.string.end.elm
           pop: true
         - include: escapes
-    - match: '^(port\s+)?([a-z_][a-zA-Z0-9_'']*|\([|!%$+\-.,=</>]+\))\s*((:)([:]+)?)'
+    - match: '^(port\s+)?([a-z][a-zA-Z0-9_]*)\s*(:)([:]+)?'
       captures:
         1: keyword.other.port.elm
         2: entity.name.function.elm hide.from.goto_symbol
-        4: keyword.other.colon.elm
-        5: invalid
+        3: keyword.other.colon.elm
+        4: invalid
       push:
         - meta_scope: meta.function.type-declaration.elm
         - match: $\n?
           pop: true
         - include: type_signature
-    - match: \bport\s+
-      scope: keyword.other.port.elm
     - match: '\b[A-Z]\w*\b'
       scope: constant.other.elm
     - include: comments
-    - match: '^[a-z][A-Za-z0-9_'']*\s+'
+    - match: '^[a-z][A-Za-z0-9_]*\s+'
       scope: entity.name.function.elm
     - include: operator_fn
-    - match: '[+-/*=.<>:&|^?%!]+'
+    - match: '[+\-/\\*=.<>:&|^?%!]+'
       scope: keyword.operator.elm
-    - match: '([\[\]\{\},])'
-      scope: constant.language.delimiter.elm
-      captures:
-        1: support.function.delimiter.elm
-    - match: '([\(\)])'
+    - match: '[\[\]\{\},]'
+      scope: support.function.delimiter.elm
+    - match: '[\(\)]'
       scope: keyword.other.parenthesis.elm
   block_comment:
     - match: '\{-'
@@ -145,7 +140,7 @@ contexts:
         1: punctuation.definition.comment.elm
     - include: block_comment
   operator_fn:
-    - match: '(\([+-/*=.<>:&|^?%!]+\))'
+    - match: '\([+\-/\\*=.<>:&|^?%!]+\)'
       scope: entity.name.function.infix.elm
   module_exports:
     - match: \(
@@ -153,9 +148,9 @@ contexts:
         - meta_scope: meta.declaration.exports.elm
         - match: \)
           pop: true
-        - match: '\b[a-z][a-zA-Z_''0-9]*'
+        - match: '\b[a-z][a-zA-Z_0-9]*'
           scope: entity.name.function.elm
-        - match: '\b[A-Z][A-Za-z_''0-9]*'
+        - match: '\b[A-Z][A-Za-z_0-9]*'
           scope: storage.type.elm
         - match: ","
           scope: punctuation.separator.comma.elm
@@ -164,14 +159,14 @@ contexts:
           comment: So named because I don't know what to call this.
           scope: meta.other.unknown.elm
   module_name:
-    - match: "[A-Z][A-Za-z._'0-9]*"
+    - match: "[A-Z][A-Za-z._0-9]*"
       scope: support.other.module.elm
   type_signature:
     - match: "->"
       scope: keyword.other.arrow.elm
-    - match: '\b[a-z][a-zA-Z0-9_'']*\b'
+    - match: '\b[a-z][a-zA-Z0-9_]*\b'
       scope: variable.other.generic-type.elm
-    - match: '\b[A-Z][a-zA-Z0-9_'']*\b'
+    - match: '\b[A-Z][a-zA-Z0-9_]*\b'
       scope: storage.type.elm
     - match: \(\)
       scope: support.constant.unit.elm
