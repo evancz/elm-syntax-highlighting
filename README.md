@@ -27,12 +27,15 @@ When I am curious if things work, I switch to Terminal and run something like `e
 
 Then I switch back to Sublime Text and use **Ctrl-t** (or **Cmd-t** on Mac) to navigate to the relevant files and make any fixes.
 
-* * *
 
-I think this workflow has some underappreciated benefits:
+## Workflow Benefits
 
-1. **Fast:** I never have to wait for a slow editor. It just does syntax highlighting.
-2. **Flexibile:** Building some projects needs more than an `elm make` call. Maybe you need to generate some files first or compile some JavaScript assets. I like that I can switch to a custom `./build.sh` script and keep using my existing workflow.
-3. **Robust:** There is not a lot that can go wrong, so I do not need to spend any time messing with various integrations if there are changes in `elm`, `elm-test`, `elm-format`, etc.
+The recommended workflow has some underappreciated benefits:
 
-I really love this balance, but I know some people want a bit more. So I made [`elm-format-shortcuts`](https://github.com/evancz/elm-format-shortcuts) for folks who want a keyboard shortcut for running `elm-format` on a file (or to run it on save).
+1. **Fast** - Never wait for a slow editor. No background tasks eating RAM and CPU.
+2. **Flexibile** - Some projects needs more than an `elm make` call. I can switch to a custom `./build.sh` script and keep the same workflow.
+3. **Robust** - Not much can go wrong here, so I never spend time messing with integrations. Changes in `elm`, `elm-test`, or `elm-format` are only a concern in the terminal.
+
+I really love this balance! It has that particular character of focused designs.
+
+That said, I know some people want a bit more, so I made [`elm-format-shortcuts`](https://github.com/evancz/elm-format-shortcuts) to run `elm-format` on save or with a keyboard shortcut. It may be worth setting this up once you have been happily using Elm for a while and become curious what it might be like to use Elm at work.
