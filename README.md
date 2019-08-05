@@ -19,7 +19,7 @@ For people who like simple editors.
 
 I do all of my Elm development with Terminal and Sublime Text open next to each other like this:
 
-![Recommended Workflow](workflow.png)
+![Recommended Workflow](install/images/workflow.png)
 
 I mostly focus on the code in Sublime Text.
 
