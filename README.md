@@ -38,4 +38,4 @@ The recommended workflow has some underappreciated benefits:
 
 I really love this balance! It has that particular character of focused designs.
 
-That said, I know some people want a bit more, so I made [`elm-format-shortcuts`](https://github.com/evancz/elm-format-shortcuts) to run `elm-format` on save or with a keyboard shortcut. It may be worth setting this up once you have been happily using Elm for a while and become curious what it might be like to use Elm at work.
+That said, I know some people want a bit more, so I made [`elm-format-on-save`](https://github.com/evancz/elm-format-on-save) as well. It may be worth setting this up once you have been happily using Elm for a while and become curious what it might be like to use Elm at work.
