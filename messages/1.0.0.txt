@@ -1,0 +1,41 @@
+Elm Syntax Highlighting - 1.0.0 - 7 August 2019
+===============================================
+
+
+New Design
+----------
+
+Instead of having a bunch of functionality packed into one
+package (some of it in disrepair) we now have two highly
+specific packages:
+
+- https://github.com/evancz/elm-syntax-highlighting
+- https://github.com/evancz/elm-format-on-save
+
+So you now have syntax highlighting that should be reliable
+through future releases.
+
+The new design is described in more detail here:
+
+  https://github.com/evancz/elm-syntax-highlighting
+
+It outlines a recommended workflow as well.
+
+
+Adding back "Elm Format on Save"
+--------------------------------
+
+Check out the install instructions here:
+
+  https://github.com/evancz/elm-format-on-save/
+
+The new package for running elm-format when you save a file
+has some important changes:
+
+1. It expects 0.19 code.
+2. It runs *before* a file is written to disk.
+
+The previous implementation ran *after* the file was saved,
+causing a second save with the formatted code. So point (2)
+is really important for people with file watchers, allowing
+you to avoid a bunch of pointless work.

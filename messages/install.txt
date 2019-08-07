@@ -1,0 +1,8 @@
+Thanks for installing Elm Syntax Highlighting!
+==============================================
+
+You can start a new project by running `elm init` in the
+terminal. From there, you should get syntax highlighting
+when you open files like src/Main.elm
+
+I hope you enjoy working with Elm!
