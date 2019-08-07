@@ -33,9 +33,11 @@ Then I switch back to Sublime Text and use **Ctrl-t** (or **Cmd-t** on Mac) to n
 The recommended workflow has some underappreciated benefits:
 
 1. **Fast** - Never wait for a slow editor. No background tasks eating RAM and CPU.
-2. **Flexibile** - Some projects needs more than an `elm make` call. I can switch to a custom `./build.sh` script and keep the same workflow.
+2. **Flexibile** - Some projects needs more than an `elm make` call. I can switch to `elm reactor` or a custom `./build.sh` script and keep essentially the same workflow.
 3. **Robust** - Not much can go wrong here, so I never spend time messing with integrations. Changes in `elm`, `elm-test`, or `elm-format` are only a concern in the terminal.
 
 I really love this balance! It has that particular character of focused designs.
+
+* * *
 
 That said, I know some people want a bit more, so I made [`elm-format-on-save`](https://github.com/evancz/elm-format-on-save) as well. It may be worth setting this up once you have been happily using Elm for a while and become curious what it might be like to use Elm at work.
