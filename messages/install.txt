@@ -1,5 +1,4 @@
-Thanks for installing Elm Syntax Highlighting!
-==============================================
+Thanks for installing!
 
 You can start a new project by running `elm init` in the
 terminal. From there, you should get syntax highlighting
