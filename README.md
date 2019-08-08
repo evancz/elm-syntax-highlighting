@@ -1,6 +1,3 @@
-**NOT PUBLISHED YET / WORK IN PROGRESS**
-
-
 # Elm Syntax Highlighting
 
 Just add syntax highlighting for Elm.
