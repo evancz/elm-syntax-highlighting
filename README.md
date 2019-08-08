@@ -2,8 +2,6 @@
 
 Just add syntax highlighting for Elm.
 
-For people who like simple editors.
-
 
 ## Install Instructions
 
